@@ -1,5 +1,5 @@
 # Vue Photo Gallery
-A gallery built with Vue.js and created to showcase some of my nature/outdoor photography.
+A gallery built with Vue.js and created to showcase some of my nature/outdoor photography. A demo of this project can be viewed <a href="https://www.wgibbs.com/vue-photo-gallery/">here</a>.
 
 # Technologies
 - Vue.js -> https://vuejs.org/
