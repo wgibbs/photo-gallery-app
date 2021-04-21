@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Photo Gallery</title>
+  <meta name="description" content="Photo Gallery by Wes Gibbs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css?v=2.1">
+</head>
+<body>
+  
+  <main id="galleryApp">
+    <section class="gallery">
+      <header class="gallery__heading">
+        <h1>Photo Gallery</h1>
+        <hr />
+      </header>
+      <div class="gallery__interior">
+        <div class="gallery__buttons">
+          <button class="gallery__button" :aria-label="galleryPhoto.title" @click="showPhoto" v-for="(galleryPhoto, index) in galleryPhotos" v-bind:data-id="'photo-' + index">
+            <img :src="galleryPhoto.image_url" alt="Gallery Square Image" />
+          </button>
+        </div>
+        <div class="gallery__photo" v-for="(galleryPhoto, index) in galleryPhotos" role="img" :aria-label="galleryPhoto.title" v-bind:id="'photo-' + index" v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }">
+          <div class="gallery__photo-info" v-bind:class="galleryPhoto.info_position">
+            <h2 class="gallery__photo-title">{{galleryPhoto.title}}</h2>
+          </div>
+          <button class="gallery__close-btn" aria-label="Close Photo" @click="closePhoto">&#x2715;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/app.min.js"></script>
+</body>
+</html>
