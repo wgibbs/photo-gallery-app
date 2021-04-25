@@ -24,12 +24,13 @@
             <img :src="galleryPhoto.image_url" alt="Gallery Square Image" />
           </button>
         </div>
-        <div class="gallery__photo" v-for="(galleryPhoto, index) in galleryPhotos" role="img" :aria-label="galleryPhoto.title" v-bind:id="'photo-' + index" v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }">
-          <div class="gallery__photo-info">
-            <h2 class="gallery__photo-title">{{galleryPhoto.title}}</h2>
-          </div>
-          <button class="gallery__close-btn" aria-label="Close Photo" @click="closePhoto">&#x2715;</button>
-        </div>
+        <gallery-photo
+          v-for="(galleryPhoto, index) in galleryPhotos"
+          v-bind:title="galleryPhoto.title"
+          v-bind:id="'photo-' + index"
+          v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }"
+        >
+        </gallery-photo>
       </div>
     </section>
   </main>

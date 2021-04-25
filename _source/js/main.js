@@ -1,3 +1,8 @@
+
+//Components
+import GalleryPhoto from './components/GalleryPhoto.vue';
+
+//Main App
 var galleryApp = new Vue({
   el: '#galleryApp',
   data: {
@@ -9,7 +14,6 @@ var galleryApp = new Vue({
       {
         title: 'Squamish, BC',
         image_url: './img/squamish-bc-2.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Bonneville Salt Flats, UT',
@@ -18,22 +22,18 @@ var galleryApp = new Vue({
       {
         title: 'Garden of the Gods - Colorado Springs, CO',
         image_url: './img/garden-of-the-gods-co-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Seattle, WA',
         image_url: './img/seattle-wa-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Eugene, OR',
         image_url: './img/eugene-oregon-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Cumberland Trail - Chattanooga, TN',
         image_url: './img/chattanooga-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Arabia Mountain, GA',
@@ -42,17 +42,14 @@ var galleryApp = new Vue({
       {
         title: 'San Francisco, CA',
         image_url: './img/san-fran-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Squamish, BC',
         image_url: './img/squamish-bc-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Arches National Park, UT',
         image_url: './img/arches-utah-2.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Seattle, WA',
@@ -61,12 +58,10 @@ var galleryApp = new Vue({
       {
         title: 'Seal Rock, OR',
         image_url: './img/seal-rock-oregon-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Boulder Mountain Park - Boulder, CO',
         image_url: './img/boulder-co-1.jpg',
-        info_position: 'top-left',
       },
       {
         title: 'Canby, OR',
@@ -77,7 +72,6 @@ var galleryApp = new Vue({
         image_url: './img/willamette-national-forest-1.jpg',
       },
     ],
-    
     visible: 'visible',
     hidden: 'hidden',
     dataId: 'data-id',
@@ -92,15 +86,6 @@ var galleryApp = new Vue({
       
       document.getElementById(currentId).classList.add(this.visible);
       document.querySelector(this.galleryButtons).classList.add(this.hidden);
-    },
-    
-    closePhoto: function(e) {
-      const galleryPhotos = document.querySelectorAll(this.galleryPhoto);
-      
-      galleryPhotos.forEach(photo => {
-        photo.classList.remove(this.visible);
-      });
-      document.querySelector(this.galleryButtons).classList.remove(this.hidden);
-    },
+    }
   }
 });
