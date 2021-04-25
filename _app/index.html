@@ -20,17 +20,23 @@
       </header>
       <div class="gallery__interior">
         <div class="gallery__buttons">
-          <button class="gallery__button" :aria-label="galleryPhoto.title" @click="showPhoto" v-for="(galleryPhoto, index) in galleryPhotos" v-bind:data-id="'photo-' + index">
-            <img :src="galleryPhoto.image_url" alt="Gallery Square Image" />
-          </button>
+          <gallery-button
+            v-for="(galleryPhoto, index) in galleryPhotos"
+            v-bind:title="galleryPhoto.title"
+            v-bind:data-id="'photo-' + index"
+            v-bind:data-img-path="galleryPhoto.image_url"
+          >
+          </gallery-button>
         </div>
-        <gallery-photo
-          v-for="(galleryPhoto, index) in galleryPhotos"
-          v-bind:title="galleryPhoto.title"
-          v-bind:id="'photo-' + index"
-          v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }"
-        >
-        </gallery-photo>
+        <div class="gallery__photos">
+          <gallery-photo
+            v-for="(galleryPhoto, index) in galleryPhotos"
+            v-bind:title="galleryPhoto.title"
+            v-bind:id="'photo-' + index"
+            v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }"
+          >
+          </gallery-photo>
+        </div>
       </div>
     </section>
   </main>
