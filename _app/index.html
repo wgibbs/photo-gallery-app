@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=2.4">
+  <link rel="stylesheet" href="css/main.css?v=2.5">
 </head>
 <body>
   
@@ -18,30 +18,18 @@
         <h1>Photo Gallery</h1>
         <hr />
       </header>
-      <div class="gallery__interior">
-        <div class="gallery__buttons">
-          <gallery-button
-            v-for="(galleryPhoto, index) in galleryPhotos"
-            v-bind:title="galleryPhoto.title"
-            v-bind:data-id="'photo-' + index"
-            v-bind:data-img-path="galleryPhoto.image_url"
-          >
-          </gallery-button>
-        </div>
-        <div class="gallery__photos">
-          <gallery-photo
-            v-for="(galleryPhoto, index) in galleryPhotos"
-            v-bind:title="galleryPhoto.title"
-            v-bind:id="'photo-' + index"
-            v-bind:style="{backgroundImage: 'url(' + galleryPhoto.image_url + ')' }"
-          >
-          </gallery-photo>
-        </div>
+      <div class="gallery__main">
+        <gallery-item
+          v-for="(galleryItem, index) in galleryItems"
+          v-bind:title="galleryItem.title"
+          v-bind:data-img-path="galleryItem.image_url"
+        >
+        </gallery-item>
       </div>
     </section>
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="js/app.min.js?v=2.4"></script>
+  <script src="js/app.min.js?v=2.5"></script>
 </body>
 </html>

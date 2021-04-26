@@ -29,42 +29,46 @@
     }
   }
 
-  &__interior {
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     position: relative;
     margin: 30px auto 0;
     width: 95%;
   }
 
-  &__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    opacity: 1;
-
-    &.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  &__button {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    display: block;
-    margin: 3px;
+  &__item {
     max-width: 300px;
-    overflow: hidden;
-    padding: 0;
+    margin: 3px;
 
+    .gallery-active & {
+      display: none;
+
+      &.activeItem {
+        display: block;
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+    
     @media screen and (max-width: $break-mobile) {
       width: 48%;
     }
+  }
+
+  &__open-btn {
+    @include defaultButton();
+    overflow: hidden;
 
     &:hover {
       img {
         transform: scale(1.1);
       }
+    }
+
+    .activeItem & {
+      display: none;
     }
 
     img {
@@ -79,7 +83,7 @@
     border: 0;
     color: $white;
     cursor: pointer;
-    display: block;
+    display: none;
     font-size: 26px;
     line-height: 1;
     position: absolute;
@@ -87,6 +91,11 @@
     right: 10px;
     opacity: 0.7;
     @include transition(.2s);
+
+    .activeItem & {
+      display: block;
+      z-index: 100;
+    }
 
     @media screen and (max-width: $break-mobile) {
       font-size: 22px;
@@ -109,11 +118,13 @@
     top: 0;
     visibility: hidden;
     width: 100%;
+    z-index: 0;
 
-    &.visible {
+    .activeItem & {
       transition: opacity 0.5s;
       opacity: 1;
       visibility: visible;
+      z-index: 99;
     }
 
     img {
