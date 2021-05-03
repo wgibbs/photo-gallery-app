@@ -1,5 +1,11 @@
 //Data
 var galleryData = {
+  active: 'active',
+  galleryActive: 'gallery-active',
+  gallery: '.gallery__main',
+  galleryItem: '.gallery__item',
+  isActive: false,
+  
   galleryItems: [
     {
       title: 'Arches National Park, UT',
@@ -68,52 +74,24 @@ var galleryData = {
   ]
 };
 
-//Components
-var galleryItem = {
-  props: [
-    'title',
-    'dataImgPath',
-  ],
-
-  data: function () {
-    return {
-      galleryActive: 'gallery-active',
-      gallery: '.gallery__main',
-      isActive: false,
-    }
-  },
-  
-  template: '\
-    <div class="gallery__item" :class="{ activeItem: isActive }">\
-      <button class="gallery__open-btn" :aria-label="title" @click="showPhoto">\
-        <img :src="dataImgPath" alt="Gallery Button Image" />\
-      </button>\
-       <div role="img" class="gallery__photo" :aria-hidden="[!isActive]" :aria-label="title" v-bind:style="{backgroundImage: \'url(\' + dataImgPath + \')\' }">\
-        <div class="gallery__photo-info">\
-          <h2 class="gallery__photo-title">{{ title }}</h2>\
-        </div>\
-      </div>\
-      <button class="gallery__close-btn" aria-label="Close Photo" @click="closePhoto">&#x2715;</button>\
-    </div>',
-  
-  methods: {
-    showPhoto: function(e) {
-      document.querySelector(this.gallery).classList.add(this.galleryActive);
-      this.isActive = true;
-    },
-
-    closePhoto: function(e) {
-      this.isActive = false;
-      document.querySelector(this.gallery).classList.remove(this.galleryActive);
-    },
-  }
-};
-
 //Main App
 var galleryApp = new Vue({
   el: '#galleryApp',
   data: galleryData,
-  components: {
-    'gallery-item': galleryItem,
-  },
+  methods: {
+    showPhoto: function(e) {
+      const currentItem = e.currentTarget;
+      document.querySelector(this.gallery).classList.add(this.galleryActive);
+      currentItem.parentNode.classList.add(this.active);
+    },
+
+    closePhoto: function(e) {
+      const galleryItems = document.querySelectorAll(this.galleryItem);
+      document.querySelector(this.gallery).classList.remove(this.galleryActive);
+
+      galleryItems.forEach(item => {
+        item.classList.remove(this.active);
+      });
+    },
+  }
 });

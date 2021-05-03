@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=2.5">
+  <link rel="stylesheet" href="css/main.css?v=5-3-21">
 </head>
 <body>
   
@@ -19,17 +19,22 @@
         <hr />
       </header>
       <div class="gallery__main">
-        <gallery-item
-          v-for="(galleryItem, index) in galleryItems"
-          v-bind:title="galleryItem.title"
-          v-bind:data-img-path="galleryItem.image_url"
-        >
-        </gallery-item>
+        <div v-for="(galleryItem, index) in galleryItems" class="gallery__item">
+          <button class="gallery__open-btn" :aria-label="'Open Photo of '+ galleryItem.title" @click="showPhoto">
+            <img :src="galleryItem.image_url" alt="Gallery Button Image" />
+          </button>
+           <div role="img" class="gallery__photo" :aria-label="galleryItem.title" v-bind:style="{backgroundImage: 'url(' + galleryItem.image_url + ')' }">
+            <div class="gallery__photo-info">
+              <h2 class="gallery__photo-title">{{ galleryItem.title }}</h2>
+            </div>
+          </div>
+          <button class="gallery__close-btn" :aria-label="'Close Photo of '+ galleryItem.title" @click="closePhoto">&#x2715;</button>
+        </div>
       </div>
     </section>
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="js/app.min.js?v=2.5"></script>
+  <script src="js/app.min.js?v=5-3-21"></script>
 </body>
 </html>
