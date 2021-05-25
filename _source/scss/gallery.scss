@@ -6,7 +6,7 @@
   padding: 50px 0;
   position: relative;
 
-  @media screen and (min-width: $break-mobile) {
+  @media screen and (min-width: $break-mobile-lg) {
     padding: 20px 0 80px;
   }
 
@@ -35,7 +35,7 @@
       max-width: 800px;
       margin: 20px auto 0;
 
-      @media screen and (min-width: $break-mobile) {
+      @media screen and (min-width: $break-mobile-lg) {
         font-size: 20px;
       }
     }
@@ -68,13 +68,7 @@
       position: relative;
       width: 50%;
 
-      img {
-        @include transition(.4s);
-        display: block;
-        width: 100%;
-      }
-      
-      @media screen and (min-width: $break-mobile) {
+      @media screen and (min-width: $break-mobile-lg) {
         max-width: calc(33% - 10px);
         width: 33%;
       }
@@ -84,6 +78,12 @@
         width: 25%;
       }
 
+      img {
+        @include transition(.4s);
+        display: block;
+        width: 100%;
+      }
+      
       &:hover,
       &:focus {
         outline: 0;
@@ -98,7 +98,7 @@
 
   &__photo-overlay {
     display: none;
-    height: 400px;
+    height: 320px;
     max-width: 2600px;
     position: relative;
     width: 100%;
@@ -108,6 +108,10 @@
     }
 
     @media screen and (min-width: $break-mobile) {
+      height: 400px;
+    }
+
+    @media screen and (min-width: $break-mobile-lg) {
       height: 500px;
     }
 
@@ -141,15 +145,15 @@
   &__photo-info {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
-    top: auto;
     left: auto;
+    padding: 10px 15px;
+    position: absolute;
     bottom: 0;
+    top: auto;
 
     @media screen and (min-width: $break-tablet) {
       bottom: auto;
       left: 20px;
-      position: absolute;
-      padding: 10px 15px;
       top: 20px;
       width: auto;
     }
@@ -158,13 +162,13 @@
   &__photo-title {
     color: $white;
     position: relative;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
     letter-spacing: 0.7px;
     line-height: 1.1;
     text-transform: uppercase;
 
-    @media screen and (min-width: $break-tablet) {
+    @media screen and (min-width: $break-mobile-lg) {
       font-size: 20px;
     }
   }
@@ -188,7 +192,7 @@
       z-index: 100;
     }
 
-    @media screen and (min-width: $break-mobile) {
+    @media screen and (min-width: $break-mobile-lg) {
       font-size: 26px;
     }
 
