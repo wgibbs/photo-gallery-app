@@ -13,25 +13,28 @@
 <body>
   
   <main id="galleryApp">
-    <section class="gallery">
+    <article class="gallery">
       <header class="gallery__heading">
         <h1>Photo Gallery</h1>
         <hr />
+        <p>Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.
       </header>
-      <div class="gallery__main">
-        <div v-for="(galleryItem, index) in galleryItems" class="gallery__item">
-          <button class="gallery__open-btn" :aria-label="'Open Photo of '+ galleryItem.title" @click="showPhoto">
+      <section class="gallery__main">
+        <div class="gallery__buttons">
+          <button v-for="(galleryItem, index) in galleryItems" :key="index" :aria-label="'Open Photo of '+ galleryItem.title" @click="activateGallery(index)">
             <img :src="galleryItem.image_url" alt="Gallery Button Image" />
           </button>
-           <div role="img" class="gallery__photo" :aria-label="galleryItem.title" v-bind:style="{backgroundImage: 'url(' + galleryItem.image_url + ')' }">
+        </div>
+        <div class="gallery__photo-overlay">
+          <div class="gallery__photo-lg" v-for="(galleryItem, index) in galleryItems" :key="index" role="img" :aria-label="galleryItem.title" v-bind:class="{active : activeEl == index}" v-bind:style="{backgroundImage: 'url(' + galleryItem.image_url + ')' }" v-bind:aria-hidden="activeEl != index || activeEl == null ? 'true' : 'false'">
             <div class="gallery__photo-info">
               <h2 class="gallery__photo-title">{{ galleryItem.title }}</h2>
             </div>
+            <button class="gallery__photo-close" :aria-label="'Close Photo of '+ galleryItem.title" @click="closeGallery">&#x2715;</button>
           </div>
-          <button class="gallery__close-btn" :aria-label="'Close Photo of '+ galleryItem.title" @click="closePhoto">&#x2715;</button>
         </div>
-      </div>
-    </section>
+      </section>
+    </article>
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>

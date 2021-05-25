@@ -4,7 +4,7 @@ var galleryData = {
   galleryActive: 'gallery-active',
   gallery: '.gallery__main',
   galleryItem: '.gallery__item',
-  isActive: false,
+  activeEl: null,
   
   galleryItems: [
     {
@@ -79,19 +79,18 @@ var galleryApp = new Vue({
   el: '#galleryApp',
   data: galleryData,
   methods: {
-    showPhoto: function(e) {
-      const currentItem = e.currentTarget;
+
+    activateGallery: function(el) {
+      const galleryTop = document.querySelector(this.gallery).offsetTop;
+
       document.querySelector(this.gallery).classList.add(this.galleryActive);
-      currentItem.parentNode.classList.add(this.active);
+      window.scrollTo(0, galleryTop - 20);
+      this.activeEl = el;
     },
 
-    closePhoto: function(e) {
-      const galleryItems = document.querySelectorAll(this.galleryItem);
+    closeGallery: function(e) {
       document.querySelector(this.gallery).classList.remove(this.galleryActive);
-
-      galleryItems.forEach(item => {
-        item.classList.remove(this.active);
-      });
+      this.activeEl = null;
     },
   }
 });
