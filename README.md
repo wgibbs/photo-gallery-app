@@ -1,5 +1,5 @@
-# Portfolio
-My web development portfolio site, which can be viewed [here =>](https://www.wgibbs.com/)
+# Photo Gallery App
+A single page application photo gallery - [view here =>](https://wgibbs.com/photo-gallery-app/)
 
 ## Technologies
 Nuxt.js: [Docs =>](https://nuxtjs.org)<br />
