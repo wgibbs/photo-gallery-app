@@ -1,7 +1,7 @@
 <template>
-  <section class="gallery">
+  <section class="gallery px-2">
     <div 
-      class="gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-4"
+      class="gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-2"
       v-bind:class="activeEl == null ? '' : ' hidden'"
     >
       <button
@@ -35,7 +35,7 @@
       </h2>
       <button
         :aria-label="'Close Photo of '+ galleryItem.title"
-        class="text-white text-xl absolute p-1 top-3 right-3 focus:outline-custom leading-none"  
+        class="text-white text-xl absolute p-0 top-2 right-2 md:top-3 md:right-3 focus:outline-custom leading-none"  
         @click="closeGallery"
       >
         &#x2715;
