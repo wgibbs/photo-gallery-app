@@ -1,5 +1,5 @@
 # Photo Gallery App
-A single page application photo gallery - [view here =>](https://wgibbs.com/photo-gallery-app/)
+A single page application photo gallery. [View Demo =>](https://wgibbs.com/photo-gallery-app/)
 
 ## Technologies
 Nuxt.js: [Docs =>](https://nuxtjs.org)<br />
