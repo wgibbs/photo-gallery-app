@@ -1,10 +1,25 @@
-# Vue Photo Gallery
-A gallery built with Vue.js and created to showcase some of my nature/outdoor photography. A demo of this project can be viewed <a href="https://www.wgibbs.com/vue-photo-gallery/">here</a>.
+# Portfolio
+My web development portfolio site, which can be viewed [here =>](https://www.wgibbs.com/)
 
-# Technologies
-- Vue.js -> https://vuejs.org/
-- Gulp -> https://gulpjs.com
+## Technologies
+Nuxt.js: [Docs =>](https://nuxtjs.org)<br />
+Tailwind CSS: [Docs =>](https://tailwindcss.com/)
 
-# Running Locally
- - ```npm install```
- - ```gulp```
+## Build Setup
+
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
