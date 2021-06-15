@@ -44,7 +44,7 @@ export default {
   },
 
   //Router
-  router: {
-    base: '/photo-gallery-app/'
-  }
+  // router: {
+  //   base: '/photo-gallery-app/'
+  // }
 }
