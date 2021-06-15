@@ -20,26 +20,34 @@
     </div>
     <div
       :key="index"
-      class="gallery__photo-wrap container relative mx-auto pb-12 bg-black md:pb-0"
+      class="gallery__photo-wrap container relative mx-auto pb-14 bg-black"
       v-for="(galleryItem, index) in galleryItems" 
       v-bind:class="activeEl != index || activeEl == null ? 'hidden' : ''"
       v-bind:aria-hidden="activeEl != index || activeEl == null ? 'true' : 'false'" 
     >
+      <div class="container w-full bg-black bg-opacity-80 flex flex-row justify-between py-2 px-1 sm:px-4">
+        <h2 class="font-noto-sans sm:text-lg text-white leading-tight p-3 flex flex-row items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          {{ galleryItem.title }}
+        </h2>
+         <button
+          :aria-label="'Close Photo of '+ galleryItem.title"
+          class="text-white py-0 px-1 focus:outline-custom2"  
+          @click="closeGallery"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </button>
+      </div>
       <img
         :alt="galleryItem.title"
         class="w-full"
         :src="galleryItem.image_url"
       />
-      <h2 class="absolute text-white bg-black bg-opacity-80 p-3 pb-4 md:p-5 bottom-0 left-0 right-0 md:right-auto md:bottom-auto md:top-3 md:left-3 font-noto-sans text-lg leading-none">
-        {{ galleryItem.title }}
-      </h2>
-      <button
-        :aria-label="'Close Photo of '+ galleryItem.title"
-        class="text-white text-xl absolute p-0 top-2 right-2 md:top-3 md:right-3 focus:outline-custom leading-none"  
-        @click="closeGallery"
-      >
-        &#x2715;
-      </button>
     </div>
   </section>
 </template>

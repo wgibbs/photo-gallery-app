@@ -29,6 +29,7 @@ module.exports = {
       },
       outline: {
         custom: '2px solid #000000',
+        custom2: '2px solid #FFFFFF',
       },
     }
   },
