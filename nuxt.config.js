@@ -44,7 +44,7 @@ export default {
   },
 
   //Router
-  // router: {
-  //   base: '/photo-gallery-app/'
-  // }
+  router: {
+    base: 'https://wgibbs.github.io/photo-gallery-app/'
+  },
 }
