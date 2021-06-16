@@ -43,8 +43,8 @@ export default {
   build: {
   },
 
-  //Router
-  router: {
-    base: 'https://wgibbs.github.io/photo-gallery-app/'
-  },
+  // //Router
+  // router: {
+  //   base: '/photo-gallery-app/'
+  // },
 }
