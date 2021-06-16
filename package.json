@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "devDependencies": {
     "@nuxtjs/gtm": "^2.4.0",
@@ -15,6 +16,7 @@
     "core-js": "^3.9.1",
     "fibers": "^5.0.0",
     "nuxt": "^2.15.3",
+    "push-dir": "^0.4.1",
     "tailwindcss": "^2.1.4"
   }
 }
