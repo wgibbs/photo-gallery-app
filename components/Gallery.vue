@@ -155,6 +155,10 @@
         this.activeEl = el;
       },
 
+      closeGallery() {
+        this.activeEl = null;
+      },
+
       goPrev(index) {
         const galleryCount = this.galleryItems.length;
         
@@ -173,10 +177,6 @@
         } else {
           this.activeEl = index + 1;
         }
-      },
-
-      closeGallery(e) {
-        this.activeEl = null;
       },
     }
   }
