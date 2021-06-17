@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="container pt-10 pb-20 mx-auto">
+    <div class="container py-10 sm:py-20 mx-auto">
       <hr class="border border-black" />
     </div>
   </footer>
