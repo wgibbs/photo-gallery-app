@@ -7,7 +7,7 @@
       <button
         :aria-label="'Open Expanded Photo of '+ galleryItem.title" 
         @click="activateGallery(index)"
-        class="overflow-hidden border border-black focus:outline-custom"
+        class="overflow-hidden relative border border-black focus:outline-custom"
         :key="index" 
         v-for="(galleryItem, index) in galleryItems" 
       >
@@ -16,9 +16,12 @@
           :alt="galleryItem.title + ' Button Image'"
           class="transform transition duration-500 hover:scale-110" 
         />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+        </svg>
       </button>
     </div>
-    <div class="gallery__expanded container mx-auto relative mx-auto">
+    <div class="gallery__expanded container mx-auto relative">
       <div
         class="gallery__photo-wrap bg-black pb-14"
         :key="index"
@@ -36,7 +39,7 @@
           </h2>
            <button
             :aria-label="'Close Photo of '+ galleryItem.title"
-            class="text-white py-0 px-1 focus:outline-custom2"  
+            class="text-white p-0 focus:outline-custom2"  
             @click="closeGallery"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
