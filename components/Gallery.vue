@@ -1,8 +1,10 @@
 <template>
-  <section class="gallery px-2">
+  <section class="gallery relative px-2">
     <div 
       class="gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-2"
       v-bind:class="activeEl == null ? '' : ' hidden'"
+      v-on:load="onLoaded" 
+      v-show="loaded"
     >
       <button
         :aria-label="'Open Expanded Photo of '+ galleryItem.title" 
@@ -14,13 +16,19 @@
         <img 
           :src="galleryItem.image_url" 
           :alt="galleryItem.title + ' Button Image'"
+          v-on:load="onLoaded" 
+          v-show="loaded"
         />
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
         </svg>
       </button>
     </div>
-    <div class="gallery__expanded container mx-auto relative">
+    <div 
+      class="gallery__expanded container mx-auto relative"
+      v-on:load="onLoaded" 
+      v-show="loaded"
+    >
       <div
         class="gallery__photo-wrap bg-black pb-14"
         :key="index"
@@ -50,6 +58,8 @@
           :alt="galleryItem.title"
           class="w-full"
           :src="galleryItem.image_url"
+          v-on:load="onLoaded" 
+          v-show="loaded"
         />
         <div class="gallery__expanded-controls container absolute bottom-3 sm:inset-y-2/4 flex flex-row items-center justify-between px-2 w-full">
           <button
@@ -74,6 +84,14 @@
         </div>
       </div>
     </div>
+    <div 
+      class="gallery__loading container px-4 overflow-hidden flex items-start justify-center mx-auto w-full max-w-full h-screen" v-show="!loaded"
+    >
+      <svg class="animate-spin mt-5 sm:mt-10 w-40 sm:w-80 max-w-full text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
   </section>
 </template>
 
@@ -83,6 +101,7 @@
       return {
         gallery: '.gallery',
         activeEl: null,
+        loaded: false,
         galleryItems: [
           {
             title: 'Arches National Park, UT',
@@ -149,6 +168,10 @@
     },
 
     methods: {
+      
+      onLoaded() {
+        this.loaded = true;
+      },
       
       activateGallery(el) {
         const galleryTop = document.querySelector(this.gallery).offsetTop;
