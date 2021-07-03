@@ -36,27 +36,29 @@
         v-bind:class="activeEl != index || activeEl == null ? 'hidden' : ''"
         v-bind:aria-hidden="activeEl != index || activeEl == null ? 'true' : 'false'"
       >
-        <div class="container w-full bg-black bg-opacity-80 flex flex-row justify-between py-3 px-2 sm:px-4">
-          <h2 class="font-noto-sans max-w-sm sm:max-w-full pr-3 text-md sm:text-lg text-white leading-tight flex flex-row items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="gallery__photo-heading container w-full bg-black bg-opacity-80 flex flex-row justify-between py-3 px-2 sm:px-4">
+          <div class="gallery__photo-title-wrap max-w-sm sm:max-w-full text-white flex flex-row items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            {{ galleryItem.title }}
-          </h2>
-           <button
+            <h2 class="font-noto-sans text-md md:text-xl pr-12 sm:pr-0 leading-none">
+              {{ galleryItem.title }}
+            </h2>
+          </div>
+          <button
             :aria-label="'Close Photo of '+ galleryItem.title"
-            class="text-white p-0 focus:outline-custom2"  
+            class="gallery__photo-close text-white px-0 py-2 sm:py-0 focus:outline-custom2"
             @click="closeGallery"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </button>
         </div>
         <img
           :alt="galleryItem.title"
-          class="w-full"
+          class="gallery__photo border-2 border-white border-r-0 border-l-0 w-full"
           :src="galleryItem.image_url"
           v-on:load="onLoaded" 
           v-show="loaded"
@@ -64,7 +66,7 @@
         <div class="gallery__expanded-controls container absolute bottom-3 sm:inset-y-2/4 flex flex-row items-center justify-between px-2 w-full">
           <button
             aria-label="Go to the Previous Expanded Photo"
-            class="bg-black bg-opacity-70 rounded text-white focus:outline-custom2 disabled:opacity-40"
+            class="bg-black bg-opacity-70 rounded text-white hover:bg-opacity-100 focus:outline-custom2 disabled:opacity-40"
             @click="goPrev(index)"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 lg:h-10 w-8 lg:w-10" viewBox="0 0 20 20" fill="currentColor">
@@ -73,7 +75,7 @@
           </button>
           <button
             aria-label="Go to the Next Expanded Photo"
-            class="bg-black bg-opacity-70 rounded text-white focus:outline-custom2"
+            class="bg-black bg-opacity-70 rounded text-white hover:bg-opacity-100 focus:outline-custom2"
             @click="goNext(index)"
             v-bind:class="index.count" 
           >

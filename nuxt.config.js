@@ -14,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: 'A Photo Gallery App prototype built with Nuxt.js and Tailwind CSS.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/photo-gallery-app/favicon.ico' },
       {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Open+Sans:wght@400;600&display=swap'}
     ]
   },
