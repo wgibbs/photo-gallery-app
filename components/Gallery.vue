@@ -19,7 +19,9 @@
           v-on:load="onLoaded" 
           v-show="loaded"
         />
-        <IconExpand />
+        <IconExpand
+          classes="h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white"
+         />
       </button>
     </div>
     <div 
@@ -49,7 +51,9 @@
             class="gallery__photo-close text-white px-0 py-2 sm:py-0 focus:outline-custom2"
             @click="closeGallery"
           >
-            <IconClose />
+            <IconClose
+              classes="h-6 w-6 sm:h-8 sm:w-8"
+             />
           </button>
         </div>
         <img
@@ -65,14 +69,18 @@
             class="bg-black bg-opacity-70 rounded text-white hover:bg-opacity-100 focus:outline-custom2 disabled:opacity-40"
             @click="goPrev(index)"
           >
-            <IconLeftArrow />
+            <IconLeftArrow
+              classes="h-8 lg:h-10 w-8 lg:w-10" 
+            />
           </button>
           <button
             aria-label="Go to the Next Expanded Photo"
             class="bg-black bg-opacity-70 rounded text-white hover:bg-opacity-100 focus:outline-custom2"
             @click="goNext(index)"
           >
-            <IconRightArrow />
+            <IconRightArrow
+              classes="h-8 lg:h-10 w-8 lg:w-10"  
+            />
           </button>
         </div>
       </div>
@@ -85,73 +93,14 @@
 
 <script>
   export default {
+    props: [
+      'gallery-items'
+    ],
     data() {
       return {
         gallery: '.gallery',
         activeEl: null,
         loaded: false,
-        galleryItems: [
-          {
-            title: 'Arches National Park, UT',
-            image_url: './img/arches-utah-1.jpg',
-          },
-          {
-            title: 'Squamish, BC',
-            image_url: './img/squamish-bc-2.jpg',
-          },
-          {
-            title: 'Bonneville Salt Flats, UT',
-            image_url: './img/bonneville-utah-1.jpg',
-          },
-          {
-            title: 'Garden of the Gods - Colorado Springs, CO',
-            image_url: './img/garden-of-the-gods-co-1.jpg',
-          },
-          {
-            title: 'Seattle, WA',
-            image_url: './img/seattle-wa-1.jpg',
-          },
-          {
-            title: 'Cumberland Trail - Chattanooga, TN',
-            image_url: './img/chattanooga-1.jpg',
-          },
-          {
-            title: 'Arabia Mountain, GA',
-            image_url: './img/arabia-mt-1.jpg',
-          },
-          {
-            title: 'San Francisco, CA',
-            image_url: './img/san-fran-1.jpg',
-          },
-          {
-            title: 'Squamish, BC',
-            image_url: './img/squamish-bc-1.jpg',
-          },
-          {
-            title: 'Arches National Park, UT',
-            image_url: './img/arches-utah-2.jpg',
-          },
-          {
-            title: 'Seattle, WA',
-            image_url: './img/seattle-wa-2.jpg',
-          },
-          {
-            title: 'Seal Rock, OR',
-            image_url: './img/seal-rock-oregon-1.jpg',
-          },
-          {
-            title: 'Boulder Mountain Park - Boulder, CO',
-            image_url: './img/boulder-co-1.jpg',
-          },
-          {
-            title: 'Canby, OR',
-            image_url: './img/canby-or-1.jpg',
-          },
-          {
-            title: 'Willamette National Forest - Blue River, OR',
-            image_url: './img/willamette-national-forest-1.jpg',
-          },
-        ],
       }
     },
 
