@@ -5,8 +5,8 @@
       :title-classes="headerTitleClasses"
     />
     <Intro
-      :text="introCopy"
-      :text-classes="introTitleClasses"
+      :text="introText"
+      :text-classes="introTextClasses"
      />
     <Gallery 
       :gallery-items="galleryItems"
@@ -22,8 +22,8 @@
         mainClass: 'gallery-main-container',
         headerTitle: 'Photo Gallery',
         headerTitleClasses: 'font-noto-sans font-bold text-4xl md:text-5xl',
-        introCopy: 'Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.',
-        introTitleClasses: 'font-open-sans text-lg md:text-xl',
+        introText: 'Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.',
+        introTextClasses: 'font-open-sans text-lg md:text-xl',
         galleryItems: [
           {
             title: 'Arches National Park, UT',
