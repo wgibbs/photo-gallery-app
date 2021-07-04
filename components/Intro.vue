@@ -1,8 +1,8 @@
 <template>
   <section class="introduction">
-    <div class="container font-open-sans p-5 max-w-xl mx-auto text-center">
-      <p class="text-lg md:text-xl">
-       {{ introCopy }}
+    <div class="container p-5 max-w-xl mx-auto text-center">
+      <p :class="this.textClasses">
+       {{ text }}
       </p>
     </div>
   </section>
@@ -11,7 +11,8 @@
 <script>
   export default {
      props: [
-      'intro-copy',
+      'text',
+      'text-classes'
     ],
   }
 </script>

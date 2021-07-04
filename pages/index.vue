@@ -2,9 +2,11 @@
   <main :class="mainClass">
     <Header
       :title="headerTitle"
+      :title-classes="headerTitleClasses"
     />
     <Intro
-      :intro-copy="introCopy"
+      :text="introCopy"
+      :text-classes="introTitleClasses"
      />
     <Gallery 
       :gallery-items="galleryItems"
@@ -19,7 +21,9 @@
       return {
         mainClass: 'gallery-main-container',
         headerTitle: 'Photo Gallery',
+        headerTitleClasses: 'font-noto-sans font-bold text-4xl md:text-5xl',
         introCopy: 'Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.',
+        introTitleClasses: 'font-open-sans text-lg md:text-xl',
         galleryItems: [
           {
             title: 'Arches National Park, UT',
