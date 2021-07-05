@@ -5,7 +5,7 @@
     v-show="loadingStatus"
   >
     <div
-      :class=""
+      class="gallery__photo-wrap bg-black pb-14"
       :key="index"
       v-for="(galleryItem, index) in galleryItems" 
       v-bind:class="activeEl != index || activeEl == null ? 'hidden' : ''"
@@ -45,8 +45,7 @@
     data() {
       return {
         mainContainerClasses: 'gallery__photo-expanded container mx-auto relative',
-        photoWrapClasses: 'gallery__photo-wrap bg-black pb-14',
-        imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0 w-full',
+        imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0',
       }
     }
   }
