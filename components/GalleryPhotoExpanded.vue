@@ -1,11 +1,11 @@
 <template>
   <div 
-    class="gallery__photo-expanded container mx-auto relative"
+    :class="mainContainerClasses"
     v-on:load="onLoaded" 
     v-show="loadingStatus"
   >
     <div
-      class="gallery__photo-wrap bg-black pb-14"
+      :class=""
       :key="index"
       v-for="(galleryItem, index) in galleryItems" 
       v-bind:class="activeEl != index || activeEl == null ? 'hidden' : ''"
@@ -17,12 +17,12 @@
       />
       <img
         :alt="galleryItem.title"
-        class="gallery__photo-img border-2 border-white border-r-0 border-l-0 w-full"
+        :class="imgClasses"
         :src="galleryItem.image_url"
         v-on:load="onLoaded" 
         v-show="loadingStatus"
       />
-      <GalleryControls 
+      <GalleryPhotoControls 
         :index="index"
         :go-prev="goPrev"
         :go-next="goNext"
@@ -42,5 +42,12 @@
       'on-loaded',
       'loading-status',
     ],
+    data() {
+      return {
+        mainContainerClasses: 'gallery__photo-expanded container mx-auto relative',
+        photoWrapClasses: 'gallery__photo-wrap bg-black pb-14',
+        imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0 w-full',
+      }
+    }
   }
 </script>
