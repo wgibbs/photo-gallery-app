@@ -7,7 +7,7 @@
       :on-loaded="onLoaded"
       :loading-status="loaded"
     />
-    <GalleryPhotoExpanded 
+    <GalleryPhotoExpanded
       :active-el="activeEl"
       :close-gallery="closeGallery"
       :gallery-items="galleryItems"
@@ -16,8 +16,8 @@
       :on-loaded="onLoaded"
       :loading-status="loaded"
     />
-   <GalleryLoading
-    :loading-status="loaded"
+    <GalleryLoading
+      :loading-status="loaded"
     />
   </section>
 </template>

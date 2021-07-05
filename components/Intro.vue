@@ -1,7 +1,7 @@
 <template>
   <section class="introduction">
     <div class="container p-5 max-w-xl mx-auto text-center">
-      <p :class="this.textClasses">
+      <p :class="textClasses">
        {{ text }}
       </p>
     </div>
