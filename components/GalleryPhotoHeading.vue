@@ -4,17 +4,17 @@
       <IconLocation
         classes="h-6 w-6 sm:h-8 sm:w-8 mr-1 flex-shrink-0"
       />
-      <h2 class="font-noto-sans text-md md:text-xl pr-12 sm:pr-0 leading-none">
+      <h2 class="font-noto-sans text-lg md:text-xl pr-14 sm:pr-0 leading-none">
         {{ title }}
       </h2>
     </div>
     <button
       :aria-label="'Close Photo of '+ title"
-      class="gallery__photo-close text-white px-0 py-2 sm:py-0 focus:outline-custom2"
+      class="gallery__photo-close text-white px-0 py-4 sm:py-0 focus:outline-custom2"
       @click="closeGallery"
     >
       <IconClose
-        classes="h-6 w-6 sm:h-8 sm:w-8"
+        classes="h-8 w-8"
       />
     </button>
   </div>

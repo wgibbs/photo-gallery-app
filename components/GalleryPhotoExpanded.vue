@@ -5,10 +5,9 @@
     v-show="loadingStatus"
   >
     <div
-      class="gallery__photo-wrap bg-black pb-14"
       :key="index"
-      v-for="(galleryItem, index) in galleryItems" 
-      v-bind:class="activeEl != index || activeEl == null ? 'hidden' : ''"
+      v-for="(galleryItem, index) in galleryItems"
+      v-bind:class="[photoWrapClasses, (activeEl != index || activeEl == null ? 'hidden' : '')]"
       v-bind:aria-hidden="activeEl != index || activeEl == null ? 'true' : 'false'"
     >
       <GalleryPhotoHeading
@@ -45,6 +44,7 @@
     data() {
       return {
         mainContainerClasses: 'gallery__photo-expanded container mx-auto relative',
+        photoWrapClasses: 'gallery__photo-wrap bg-black pb-14',
         imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0',
       }
     }
