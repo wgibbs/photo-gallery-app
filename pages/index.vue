@@ -1,5 +1,5 @@
 <template>
-  <main :class="mainClass">
+  <main>
     <Header
       :title="headerTitle"
       :title-classes="headerTitleClasses"
@@ -17,7 +17,6 @@
   export default {
     data() {
       return {
-        mainClass: 'gallery-main-container',
         headerTitle: 'Photo Gallery',
         headerTitleClasses: 'font-noto-sans font-bold text-4xl md:text-5xl',
         introText: 'Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.',

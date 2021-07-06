@@ -1,5 +1,5 @@
 <template>
-  <section class="gallery relative px-2">
+  <section class="gallery">
     <GalleryButtons
       :activate-gallery="activateGallery"
       :active-el="activeEl"
@@ -7,7 +7,7 @@
       :on-loaded="onLoaded"
       :loading-status="loaded"
     />
-    <GalleryPhotoExpanded
+    <GalleryPhotosExpanded
       :active-el="activeEl"
       :close-gallery="closeGallery"
       :gallery-items="galleryItems"

@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-2"
+    class="gallery__buttons container px-2 mx-auto grid grid-cols-2 md:grid-cols-3 gap-2"
     v-bind:class="activeEl == null ? '' : ' hidden'"
     v-on:load="onLoaded" 
     v-show="loadingStatus"

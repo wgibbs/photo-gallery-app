@@ -1,6 +1,6 @@
 <template>
   <div 
-    :class="mainContainerClasses"
+    :class="containerClasses"
     v-on:load="onLoaded" 
     v-show="loadingStatus"
   >
@@ -43,8 +43,8 @@
     ],
     data() {
       return {
-        mainContainerClasses: 'gallery__photo-expanded container mx-auto relative',
-        photoWrapClasses: 'gallery__photo-wrap bg-black pb-14',
+        containerClasses: 'gallery__photos-expanded container px-2 mx-auto',
+        photoWrapClasses: 'gallery__photo bg-black pb-14 relative',
         imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0',
       }
     }
