@@ -29,6 +29,6 @@
         prevAriaLabel: 'Go to the Previous Expanded Photo',
         nextAriaLabel: 'Go to the Next Expanded Photo',
       }
-    }
+    },
   }
 </script>

@@ -1,18 +1,24 @@
 <template>
   <div 
-    class="gallery__loading container px-4 overflow-hidden flex items-start justify-center mx-auto w-full max-w-full h-screen"
+    :class="containerClasses"
     v-show="!loadingStatus"
   >
     <IconLoading
-      classes="animate-spin mt-5 sm:mt-10 w-40 sm:w-80 max-w-full text-black"
+      :classes="iconClasses"
     />
   </div>
 </template>
 
 <script>
   export default {
-     props: [
+    props: [
       'loading-status',
     ],
+    data() {
+      return {
+        containerClasses: 'gallery__loading container px-4 overflow-hidden flex items-start justify-center mx-auto w-full max-w-full h-screen',
+        iconClasses: 'animate-spin mt-5 sm:mt-10 w-40 sm:w-80 max-w-full text-black',
+      }
+    },
   }
 </script>
