@@ -1,7 +1,7 @@
 <template>
   <div 
     :class="containerClasses"
-    v-on:load="onLoaded" 
+    v-on:load="mounted" 
     v-show="loadingStatus"
   >
     <div
@@ -18,7 +18,7 @@
         :alt="galleryItem.title"
         :class="imgClasses"
         :src="galleryItem.image_url"
-        v-on:load="onLoaded" 
+        v-on:load="mounted" 
         v-show="loadingStatus"
       />
       <GalleryPhotoControls 
@@ -38,7 +38,7 @@
       'gallery-items',
       'go-prev',
       'go-next',
-      'on-loaded',
+      'mounted',
       'loading-status',
     ],
     data() {

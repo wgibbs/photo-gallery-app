@@ -1,7 +1,7 @@
 <template>
   <div
     v-bind:class="[containerClasses, (activeEl == null ? '' : ' hidden')]"
-    v-on:load="onLoaded" 
+    v-on:load="mounted" 
     v-show="loadingStatus"
   >
     <button
@@ -14,6 +14,8 @@
       <img 
         :src="galleryItem.image_url" 
         :alt="galleryItem.title + ' Button Image'"
+        v-on:load="mounted" 
+        v-show="loadingStatus"
       />
       <IconExpand
         :classes="iconClasses"
@@ -28,7 +30,7 @@
       'active-el',
       'activate-gallery',
       'gallery-items',
-      'on-loaded',
+      'mounted',
       'loading-status',
     ],
     data() {

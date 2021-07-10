@@ -4,7 +4,7 @@
       :activate-gallery="activateGallery"
       :active-el="activeEl"
       :gallery-items="galleryItems"
-      :on-loaded="onLoaded"
+      :mounted="mounted"
       :loading-status="loaded"
     />
     <GalleryPhotosExpanded
@@ -13,7 +13,7 @@
       :gallery-items="galleryItems"
       :go-prev="goPrev"
       :go-next="goNext"
-      :on-loaded="onLoaded"
+      :mounted="mounted"
       :loading-status="loaded"
     />
     <GalleryLoading
@@ -95,8 +95,8 @@
     },
 
     methods: {
-      
-      onLoaded() {
+
+      mounted() {
         this.loaded = true;
       },
       
