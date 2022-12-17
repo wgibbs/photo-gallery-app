@@ -5,7 +5,7 @@
     @click="goNext(index)"
   >
     <IconRightArrow
-      :classes="iconClasses"
+      :class="iconClasses"
     />
   </button>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section class="gallery">
+  <section class="gallery mt-10 px-5">
     <GalleryButtons
       :activate-gallery="activateGallery"
       :active-el="activeEl"
@@ -31,6 +31,10 @@
         loaded: false,
         galleryItems: [
           {
+            title: 'Cloudland Canyon State Park, GA',
+            image_url: './img/cloudland-canyon-ga-1.jpg',
+          },
+          {
             title: 'Arches National Park, UT',
             image_url: './img/arches-utah-1.jpg',
           },
@@ -39,12 +43,24 @@
             image_url: './img/squamish-bc-2.jpg',
           },
           {
+            title: 'Nashville, TN',
+            image_url: './img/nashville-tn-1.jpg',
+          },
+          {
             title: 'Bonneville Salt Flats, UT',
             image_url: './img/bonneville-utah-1.jpg',
           },
           {
             title: 'Garden of the Gods - Colorado Springs, CO',
             image_url: './img/garden-of-the-gods-co-1.jpg',
+          },
+          {
+            title: 'Canby, OR',
+            image_url: './img/canby-or-1.jpg',
+          },
+          {
+            title: 'Cherokee, NC',
+            image_url: './img/cherokee-nc-1.jpg',
           },
           {
             title: 'Seattle, WA',
@@ -81,10 +97,6 @@
           {
             title: 'Boulder Mountain Park - Boulder, CO',
             image_url: './img/boulder-co-1.jpg',
-          },
-          {
-            title: 'Canby, OR',
-            image_url: './img/canby-or-1.jpg',
           },
           {
             title: 'Willamette National Forest - Blue River, OR',

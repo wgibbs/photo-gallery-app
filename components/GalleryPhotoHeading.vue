@@ -2,7 +2,7 @@
   <div :class="containerClasses">
     <div :class="titleWrapClasses">
       <IconLocation
-        :classes="iconLocClasses"
+        :class="iconLocClasses"
       />
       <h2 :class="titleClasses">
         {{ title }}
@@ -14,7 +14,7 @@
       @click="closeGallery"
     >
       <IconClose
-        :classes="iconCloseClasses"
+        :class="iconCloseClasses"
       />
     </button>
   </div>
@@ -33,7 +33,7 @@
         iconLocClasses: 'h-6 w-6 sm:h-8 sm:w-8 mr-1 flex-shrink-0',
         titleClasses: 'font-noto-sans text-lg md:text-xl pr-14 sm:pr-0 leading-none',
         buttonClasses: 'gallery__photo-close text-white px-0 py-4 sm:py-0 focus:outline-custom2',
-        iconCloseClasses: 'h-8 w-8',
+        iconCloseClasses: 'hover:scale-105 transform transition duration-500 h-8 w-8',
       }
     },
   }

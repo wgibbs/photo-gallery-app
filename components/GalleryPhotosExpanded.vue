@@ -43,7 +43,7 @@
     ],
     data() {
       return {
-        containerClasses: 'gallery__photos-expanded container px-2 mx-auto',
+        containerClasses: 'gallery__photos-expanded container mx-auto',
         photoWrapClasses: 'gallery__photo bg-black pb-14 relative',
         imgClasses: 'gallery__photo-img border-2 border-white border-r-0 border-l-0',
       }

@@ -11,14 +11,15 @@
       :key="index" 
       v-for="(galleryItem, index) in galleryItems" 
     >
-      <img 
+      <img
+        :class="imgClasses"
         :src="galleryItem.image_url" 
         :alt="galleryItem.title + ' Button Image'"
         v-on:load="mounted" 
         v-show="loadingStatus"
       />
       <IconExpand
-        :classes="iconClasses"
+        :class="iconClasses"
       />
     </button>
   </div>
@@ -35,9 +36,10 @@
     ],
     data() {
       return {
-        containerClasses: 'gallery__buttons container px-2 mx-auto grid grid-cols-2 md:grid-cols-3 gap-2',
-        buttonClasses: 'overflow-hidden focus:outline-custom relative border-2 md:border-4 border-transparent hover:border-black transition duration-500',
-        iconClasses: 'h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white',
+        containerClasses: 'gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-2',
+        buttonClasses: 'overflow-hidden focus:outline-custom relative border-2 border-transparent group hover:border-black transition duration-500',
+        imgClasses: 'group-hover:scale-105 transform transition duration-500',
+        iconClasses: 'group-hover:scale-110 transform transition duration-500 h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white',
       }
     },
   }

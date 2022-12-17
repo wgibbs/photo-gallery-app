@@ -5,7 +5,7 @@
     @click="goPrev(index)"
   >
     <IconLeftArrow
-      :classes="iconClasses" 
+      :class="iconClasses" 
     />
   </button>
 </template>

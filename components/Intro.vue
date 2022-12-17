@@ -1,6 +1,6 @@
 <template>
-  <section class="introduction">
-    <div class="container p-5 max-w-xl mx-auto text-center">
+  <section class="introduction px-5 mt-5">
+    <div class="container max-w-xl mx-auto text-center">
       <p :class="textClasses">
        {{ text }}
       </p>

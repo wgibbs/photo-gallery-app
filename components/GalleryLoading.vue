@@ -4,7 +4,7 @@
     v-show="!loadingStatus"
   >
     <IconLoading
-      :classes="iconClasses"
+      :class="iconClasses"
     />
   </div>
 </template>
