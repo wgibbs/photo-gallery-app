@@ -19,7 +19,7 @@
       return {
         headerTitle: 'Photo Gallery',
         headerTitleClasses: 'font-noto-sans font-bold text-4xl md:text-5xl',
-        introText: 'Hello and welcome to my photo gallery. See below for some of my outdoor photography from various travels and road-trips throughout the years.',
+        introText: 'Hello and welcome to my photo gallery. See below for some of my photography from various travels and road-trips.',
         introTextClasses: 'font-open-sans text-lg md:text-xl',
       }
     },

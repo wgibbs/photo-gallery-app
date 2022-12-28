@@ -36,9 +36,9 @@
     ],
     data() {
       return {
-        containerClasses: 'gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 gap-2',
-        buttonClasses: 'overflow-hidden focus:outline-custom relative border-2 border-transparent group hover:border-black transition duration-500',
-        imgClasses: 'group-hover:scale-105 transform transition duration-500',
+        containerClasses: 'gallery__buttons container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-4',
+        buttonClasses: 'focus:outline-custom relative border-2 border-transparent group hover:border-black transition duration-500 min-h-[200px] lg:min-h-[260px] overflow-hidden',
+        imgClasses: 'group-hover:scale-105 h-full transform transition duration-500 object-cover',
         iconClasses: 'group-hover:scale-110 transform transition duration-500 h-4 w-4 sm:h-6 sm:w-6 absolute right-1 bottom-1 bg-black bg-opacity-70 rounded text-white',
       }
     },
